@@ -395,6 +395,28 @@
 .main-slider__slide img {
   position: absolute;
   top: 5px;
+  right: 0;
+}
+
+.main-slider__slide h3 {
+  position: absolute;
+  top: 36px;
+  left: 36px;
+  margin: 0;
+  color: #212D55;
+  font-family: "Gilroy", sans-serif;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  max-width: 146px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.main-slider__slide span {
+  font-weight: 700;
 }
 
 .main-slider__btn {
@@ -542,8 +564,7 @@
 }
 
 @media screen and (max-width: 1000px) {
-  .complex-slider__slide:last-of-type {
-  }
+  .complex-slider__slide:last-of-type {}
 }
 
 
