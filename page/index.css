@@ -9,22 +9,15 @@
   background-repeat: no-repeat;
   background-size: contain;
   margin: 0 auto;
-  overflow: hidden;
 }
 
-@media screen and (max-width: 1280px) {
+@media screen and (max-width: 1335px) {
   .page {
     background-position: top 203px left 0;
   }
 }
 
 @media screen and (max-width: 1000px) {
-  .page {
-    background-position: top 183px left 0;
-  }
-}
-
-@media screen and (max-width: 768px) {
   .page {
     background-size: auto;
     background-position: top 0 left 40%;
@@ -183,9 +176,20 @@
 .main {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  position: relative;
+  padding: 0 0 72px 0;
+  overflow: hidden;
+
 
 }
+
+@media screen and (max-width: 768px) {
+  .main {
+    padding: 0 0 100px 0;
+  }
+}
+
+
 
 .main__nav {
   gap: 35px;
@@ -272,7 +276,7 @@
   margin: 0 auto;
 }
 
-@media screen and (max-width: 768px){
+@media screen and (max-width: 768px) {
   .main__text {
     font-size: 20px;
     gap: 25px;
@@ -328,7 +332,7 @@
   font-style: normal;
   font-weight: 600;
   line-height: normal;
-  margin: 25px 0 0 0;
+  margin: 25px auto 0;
 }
 
 .button__main:hover {
@@ -339,15 +343,28 @@
 
 @media screen and (max-width: 768px) {
   .button__main {
-    margin: 30px 0 0 0;
+    margin: 30px auto 0;
     width: 290px;
     font-size: 20px;
   }
 }
 
 .main-slider {
-  margin: 41px 0 0 0;
+  margin: 41px auto 0;
+  max-width: 992px;
+  position: relative;
+
 }
+
+@media screen and (max-width: 1000px) {
+  .main-slider {
+    margin: 41px 0 0 0;
+    padding: 0 0 0 15px;
+    width: 100%;
+
+  }
+}
+
 
 .main-slider__wrapper {
   position: relative;
@@ -368,6 +385,11 @@
   background: #F9FCFD;
   box-shadow: 0px 5px 15px 0px rgba(33, 45, 85, 0.20);
   position: relative;
+  flex-shrink: 0;
+}
+
+.main-slider__slide:last-of-type {
+  margin-right: 30px;
 }
 
 .main-slider__slide img {
@@ -375,25 +397,160 @@
   top: 5px;
 }
 
-.swiper-button-prev {}
+.main-slider__btn {
+  width: 25px;
+  height: 25px;
+  border: none;
+  border-radius: 50%;
+  background-color: #FFF;
+  background-repeat: no-repeat;
+  background-position: center;
+  box-shadow: 0px 3px 15px rgba(33, 45, 85, 0.10);
+  position: absolute;
+  z-index: 2;
+  display: none;
+}
 
-.main-slider__btn-prev {}
+.main-slider__btn-prev {
+  background-image: url(../image/prev.png);
+  bottom: -65px;
+  right: 115px;
+}
 
-.swiper-button-next {}
+.main-slider__btn-prev:hover {
+  background-color: #31BEF4;
+  background-image: url(../image/row-white.png);
+  transform: rotate(180deg);
+}
 
-.main-slider__btn-next {}
+.main-slider__btn-next {
+  background-image: url(../image/next.png);
+  right: 30px;
+  bottom: -65px;
+}
 
-.main__clouds {}
+.main-slider__btn-next:hover {
+  background-color: #31BEF4;
+  background-image: url(../image/row-white.png);
+}
 
-.complex {}
+@media screen and (max-width: 1000px) {
+  .main-slider__btn {
+    display: block;
+  }
+}
 
-.comlex__header {}
+.main__clouds {
+  width: 100%;
+  height: 219px;
+  position: absolute;
+  top: -157px;
+  right: 0;
+  background-image: url(../image/Облака.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 0;
+}
 
-.complex-slider {}
+@media screen and (max-width: 768px) {
+  .main__clouds {
+    top: -177px;
+    background-position: top 0 left 30%;
+    height: 272px;
+  }
+}
 
-.complex-slider__wrapper {}
+.complex {
+  background-color: #fff;
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
 
-.complex-slider__slide {}
+}
+
+.comlex__header {
+  color: #212D55;
+  font-family: "Gilroy", sans-serif;
+  font-size: 45px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 70px;
+  /* 155.556% */
+  position: relative;
+  z-index: 2;
+  margin: 0 auto;
+  max-width: 279px;
+}
+
+.complex-slider {
+  margin: 60px auto 0;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  overflow: clip;
+  list-style: none;
+  padding: 0;
+  z-index: 1;
+
+}
+
+@media screen and (max-width: 1280px) {
+  .complex-slider {
+    width: 100%;
+    margin: 60px 0 0 0;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .complex-slider {
+    width: calc(100%);
+    margin: 60px 0 0 0;
+  }
+}
+
+.complex-slider .swiper-pagination-bullet {
+  width: 20px;
+  height: 20px;
+  background-color: transparent;
+  border: 2px solid #0062BD;
+  opacity: 1;
+  box-sizing: border-box;
+
+}
+
+.complex-slider .swiper-pagination-bullet-active {
+  box-sizing: border-box;
+  background-color: #0062BD;
+  width: 16px;
+  height: 16px;
+}
+
+.complex-slider__wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  display: flex;
+  transition-property: transform;
+  transition-timing-function: var(--swiper-wrapper-transition-timing-function, initial);
+  box-sizing: border-box;
+}
+
+.complex-slider__slide {
+  flex-shrink: 0;
+}
+
+@media screen and (max-width: 1000px) {
+  .complex-slider__slide:last-of-type {
+  }
+}
+
+
+.complex-slider__slide img {
+  display: block;
+  flex-shrink: 0;
+}
 
 .complex-slider__btn-prev {}
 
