@@ -45,6 +45,10 @@ const complexSlider = new Swiper(".complex-slider", {
     el: ".complex-slider__pagination",
     type: "bullets",
   },
+  navigation: {
+    nextEl: ".complex-slider__btn-next",
+    prevEl: ".complex-slider__btn-prev",
+  },
   breakpoints: {
     320: { centeredSlides: true },
     426: {},
