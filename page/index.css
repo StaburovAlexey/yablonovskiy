@@ -741,8 +741,37 @@
   max-width: 1140px;
 }
 
-.swiper-pagination {}
+.description-slider__pagination-bullet {
+  width: 193px;
+  height: 102px;
+  flex-shrink: 0;
+  border-radius: 10px;
+  background-color: #F9FCFD;
+  background-image: url(../image/description-slider__pagination.png);
+  background-position: top 5px left 0;
+  background-size: contain;
+  box-shadow: 0px 5px 15px 0px rgba(33, 45, 85, 0.20);
+  margin: 5px;
+  box-sizing: border-box;
+  padding: 38px 0 0 36px;
+  color: #212D55;
+  font-family: "Gilroy", sans-serif;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
 
+.description-slider__pagination-bullet_active {
+  background-image: url(../image/description-slider__pagination_active.png);
+  color: #31BEF4;
+}
+
+.description-slider__pagination{
+  display: flex;
+  gap: 40px;
+  margin: 0 0 60px 0;
+}
 .description-slider__wrapper {
   position: relative;
   width: 100%;
@@ -760,6 +789,7 @@
   grid-template-columns: 848px 262px;
   grid-template-rows: 171px 171px 171px;
   flex-shrink: 0;
+  box-sizing: border-box;
 }
 
 @media screen and (max-width: 1144px) {
@@ -770,9 +800,16 @@
   }
 }
 
-@media screen and (max-width: 768px){
-  .description-slider__slide{
-    grid-template-columns: minmax(140px, 1fr) minmax(140px, 1fr);
+@media screen and (max-width: 768px) {
+  .description-slider__slide {
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .description-slider__slide {
+    gap: 20px 0;
   }
 }
 
@@ -781,11 +818,23 @@
   height: 100%;
   object-fit: cover;
   border-radius: 10px;
+  display: block;
 }
 
 @media screen and (max-width: 768px) {
-  .description-slider__slide img:last-of-type {
+  .description-slider__slide img:nth-of-type(3) {
     display: none;
+  }
+
+  .description-slider__slide img {
+    width: 100%;
+  }
+
+}
+
+@media screen and (max-width: 425px) {
+  .description-slider__slide img {
+    width: 140px;
   }
 }
 
@@ -813,7 +862,6 @@
     grid-column-end: 4;
     grid-row-start: 1;
     grid-row-end: 2;
-    display: grid;
     padding: 140.75px 0 54px 27px;
     border-radius: 0px 0px 10px 10px;
   }
@@ -822,6 +870,8 @@
 @media screen and (max-width: 768px) {
   .description-slider__slide-foto1 {
     padding: 256px 15px 31px;
+    grid-column-start: 1;
+    grid-column-end: 3;
   }
 }
 

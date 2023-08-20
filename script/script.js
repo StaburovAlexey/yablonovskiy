@@ -64,10 +64,15 @@ const descriptionSlider = new Swiper(".description-slider", {
   slideClass: "description-slider__slide",
   //Wrapper class
   wrapperClass: "description-slider__wrapper",
+
   // If we need pagination
   pagination: {
     el: ".description-slider__pagination",
-    type: "bullets",
+   
+    bulletElement: "div",
+    clickable: true,
+    bulletClass: "description-slider__pagination-bullet",
+    bulletActiveClass: "description-slider__pagination-bullet_active",
   },
 
   // Navigation arrows
@@ -77,7 +82,6 @@ const descriptionSlider = new Swiper(".description-slider", {
   },
   slidesPerView: 1,
   centeredSlides: true,
-  spaceBetween: 30,
   breakpoints: {
     320: {},
     426: {},
