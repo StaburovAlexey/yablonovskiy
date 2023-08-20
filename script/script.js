@@ -56,3 +56,32 @@ const complexSlider = new Swiper(".complex-slider", {
     1024: {},
   },
 });
+
+const descriptionSlider = new Swiper(".description-slider", {
+  // Optional parameters
+  direction: "horizontal",
+  // Slide class
+  slideClass: "description-slider__slide",
+  //Wrapper class
+  wrapperClass: "description-slider__wrapper",
+  // If we need pagination
+  pagination: {
+    el: ".description-slider__pagination",
+    type: "bullets",
+  },
+
+  // Navigation arrows
+  navigation: {
+    nextEl: ".description-slider__btn-next",
+    prevEl: ".description-slider__btn-prev",
+  },
+  slidesPerView: 1,
+  centeredSlides: true,
+  spaceBetween: 30,
+  breakpoints: {
+    320: {},
+    426: {},
+    768: {},
+    1024: {},
+  },
+});
