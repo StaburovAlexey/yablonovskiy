@@ -413,28 +413,37 @@
     </div>
     <div class="consultation">
       <h2 class="consultation__header">Узнайте о выгодных предложениях и получите личную консультацию</h2>
-      <div class="consultation__open">
-        <img src="./image/eclipse.png" alt="">
-        <p>Сейчас мы работаем</p>
-      </div>
       <div class="consultation__info">
         <div class="consultation__tel">
           <p>По любым возникающим Вами
             вопросов звоните нам напрямую</p>
-          <p><img src="./image/icon__tel.svg" alt="">+7 (918) 377-48-10</p>
+          <p><span class="consultation__tel-icon"></span>+7 (918) 377-48-10</p>
         </div>
-      </div>
-      <p class="consultation__separation">Или заполните форму</p>
-      <!-- form -->
-      <form action="" class="form" id="form">
-        <input type="text" name="name">
-        <input type="tel" name="tel">
-        <input type="email" name="email">
-        <input type="submit" id="submit">
-        <input type="checkbox" id="checkbox">
-        <label for="checkbox">Я принимаю условия <span>обработки персональных данных</span></label>
 
-      </form>
+        <p class="consultation__separation">Или заполните форму</p>
+        <!-- form -->
+        <section class="form-conteiner">
+          <div class="consultation__open">
+            <img src="./image/eclipse.png" alt="">
+            <p>Сейчас мы работаем</p>
+          </div>
+          <form action="" class="form" id="form">
+            <div class="border">
+              <input type="text" name="name" class="form__input">
+            </div>
+
+            <!-- <input type="tel" name="tel" class="form__input">
+            <label for="tel" class="form__input-label"></label>
+            <input type="email" name="email" class="form__input">
+            <label for="email" class="form__input-label"></label>
+            <input type="submit" id="submit" class="form__input">
+            <label for="submit" class="form__input-label"></label>
+            <input type="checkbox" id="checkbox" class="form__checkbox">
+            <label for="checkbox">Я принимаю условия <span>обработки персональных данных</span></label> -->
+
+          </form>
+        </section>
+      </div>
     </div>
     <script src="./script/swiper-bundle.min.js"></script>
     <script src="./script/script.js"></script>

@@ -68,11 +68,11 @@ const descriptionSlider = new Swiper(".description-slider", {
   // If we need pagination
   pagination: {
     el: ".description-slider__pagination",
-   
-    bulletElement: "div",
-    clickable: true,
     bulletClass: "description-slider__pagination-bullet",
     bulletActiveClass: "description-slider__pagination-bullet_active",
+    type: "custom",
+    bulletElement: "div",
+    clickable: true,
   },
 
   // Navigation arrows
