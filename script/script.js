@@ -70,7 +70,7 @@ const descriptionSlider = new Swiper(".description-slider", {
     el: ".description-slider__pagination",
     bulletClass: "description-slider__pagination-bullet",
     bulletActiveClass: "description-slider__pagination-bullet_active",
-    type: "custom",
+    // type: "custom",
     bulletElement: "div",
     clickable: true,
   },
