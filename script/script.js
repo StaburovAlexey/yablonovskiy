@@ -89,3 +89,177 @@ const descriptionSlider = new Swiper(".description-slider", {
     1024: {},
   },
 });
+
+// яндекс карты API
+
+ymaps.ready(function () {
+  const myMap = new ymaps.Map(
+      "map",
+      {
+        center: [44.991341399275534, 38.93490385310366],
+        zoom: 15.5,
+      },
+      {
+        searchControlProvider: "yandex#search",
+      }
+    ),
+    // Создаём макет содержимого.
+    MyIconContentLayout = ymaps.templateLayoutFactory.createClass(
+      '<div class="map__icon">$[properties.iconContent]</div>'
+    ),
+    geo = new ymaps.Placemark(
+      [44.9916779822134, 38.92784074068536],
+      {
+        hintContent: "ЖК “Яблоновский”",
+      },
+      {
+        // Опции.
+        // Необходимо указать данный тип макета.
+        iconLayout: "default#imageWithContent",
+        // Своё изображение иконки метки.
+        iconImageHref: "image/geo.svg",
+        // Размеры метки.
+        iconImageSize: [81, 81],
+        // её "ножки" (точки привязки).
+        // iconImageOffset: [-24, -24]
+        // Макет содержимого.
+        iconContentLayout: MyIconContentLayout,
+      }
+    );
+  bankWhite = new ymaps.Placemark(
+    [44.99389936195114, 38.93715690867617],
+    {
+      hintContent: "Банк>",
+    },
+    {
+      iconLayout: "default#imageWithContent",
+      iconImageHref: "image/bank-white.svg",
+      iconImageSize: [76, 76],
+      iconContentLayout: MyIconContentLayout,
+    }
+  );
+  bank = new ymaps.Placemark(
+    [44.993731879838286, 38.93077325122069],
+    {
+      hintContent: "Банк",
+    },
+    {
+      iconLayout: "default#imageWithContent",
+      iconImageHref: "image/bank.svg",
+      iconImageSize: [76, 76],
+      iconContentLayout: MyIconContentLayout,
+    }
+  );
+  mall = new ymaps.Placemark(
+    [44.992666072924976, 38.93122386233519],
+    {
+      hintContent: "Магазин",
+    },
+    {
+      iconLayout: "default#imageWithContent",
+      iconImageHref: "image/mall.svg",
+      iconImageSize: [76, 76],
+      iconContentLayout: MyIconContentLayout,
+    }
+  );
+  mallWhite = new ymaps.Placemark(
+    [44.990717117214615, 38.92671775119019],
+    {
+      hintContent: "Магазин",
+    },
+    {
+      iconLayout: "default#imageWithContent",
+      iconImageHref: "image/mall-white.svg",
+      iconImageSize: [76, 76],
+      iconContentLayout: MyIconContentLayout,
+    }
+  );
+  swimmingPool = new ymaps.Placemark(
+    [44.99655258539743, 38.92485093371581],
+    {
+      hintContent: "Бассейн 'Ниагара'",
+    },
+    {
+      iconLayout: "default#imageWithContent",
+      iconImageHref: "image/swiming-pool.svg",
+      iconImageSize: [76, 76],
+      iconContentLayout: MyIconContentLayout,
+    }
+  );
+
+  ambulance = new ymaps.Placemark(
+    [44.99009685481702, 38.93253278033449],
+    {
+      hintContent: "Поликлиника",
+    },
+    {
+      iconLayout: "default#imageWithContent",
+      iconImageHref: "image/ambulance.svg",
+      iconImageSize: [76, 76],
+      iconContentLayout: MyIconContentLayout,
+    }
+  );
+
+  ambulanceWhite = new ymaps.Placemark(
+    [44.98732010079116,38.92750095622258],
+    {
+      hintContent: "Поликлиника",
+    },
+    {
+      iconLayout: "default#imageWithContent",
+      iconImageHref: "image/ambulance-white.svg",
+      iconImageSize: [76, 76],
+      iconContentLayout: MyIconContentLayout,
+    }
+  );
+
+  gas = new ymaps.Placemark(
+    [44.98978688382531,38.92348837153629],
+    {
+      hintContent: "Заправка",
+    },
+    {
+      iconLayout: "default#imageWithContent",
+      iconImageHref: "image/gas.svg",
+      iconImageSize: [76, 76],
+      iconContentLayout: MyIconContentLayout,
+    }
+  );
+  child = new ymaps.Placemark(
+    [44.990091417528966,38.929153196975754],
+    {
+      hintContent: "Детский сад",
+    },
+    {
+      iconLayout: "default#imageWithContent",
+      iconImageHref: "image/child.svg",
+      iconImageSize: [76, 76],
+      iconContentLayout: MyIconContentLayout,
+    }
+  );
+  cafe = new ymaps.Placemark(
+    [44.98876668404919,38.932564966842676],
+    {
+      hintContent: "Кафе",
+    },
+    {
+      iconLayout: "default#imageWithContent",
+      iconImageHref: "image/cafe.svg",
+      iconImageSize: [76, 76],
+      iconContentLayout: MyIconContentLayout,
+    }
+  );
+
+  myMap.geoObjects.add(geo);
+  myMap.geoObjects.add(bankWhite);
+  myMap.geoObjects.add(bank);
+  myMap.geoObjects.add(ambulance);
+  myMap.geoObjects.add(ambulanceWhite);
+  myMap.geoObjects.add(mall);
+  myMap.geoObjects.add(mallWhite);
+  myMap.geoObjects.add(swimmingPool);
+  myMap.geoObjects.add(gas);
+  myMap.geoObjects.add(child);
+  myMap.geoObjects.add(cafe);
+
+});
