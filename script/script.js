@@ -98,6 +98,7 @@ ymaps.ready(function () {
       {
         center: [44.991341399275534, 38.93490385310366],
         zoom: 15.5,
+        scrollZoom: false,
       },
       {
         searchControlProvider: "yandex#search",
@@ -129,7 +130,7 @@ ymaps.ready(function () {
   bankWhite = new ymaps.Placemark(
     [44.99389936195114, 38.93715690867617],
     {
-      hintContent: "Банк>",
+      hintContent: "Банк",
     },
     {
       iconLayout: "default#imageWithContent",
@@ -201,7 +202,7 @@ ymaps.ready(function () {
   );
 
   ambulanceWhite = new ymaps.Placemark(
-    [44.98732010079116,38.92750095622258],
+    [44.98732010079116, 38.92750095622258],
     {
       hintContent: "Поликлиника",
     },
@@ -214,7 +215,7 @@ ymaps.ready(function () {
   );
 
   gas = new ymaps.Placemark(
-    [44.98978688382531,38.92348837153629],
+    [44.98978688382531, 38.92348837153629],
     {
       hintContent: "Заправка",
     },
@@ -226,7 +227,7 @@ ymaps.ready(function () {
     }
   );
   child = new ymaps.Placemark(
-    [44.990091417528966,38.929153196975754],
+    [44.990091417528966, 38.929153196975754],
     {
       hintContent: "Детский сад",
     },
@@ -238,7 +239,7 @@ ymaps.ready(function () {
     }
   );
   cafe = new ymaps.Placemark(
-    [44.98876668404919,38.932564966842676],
+    [44.98876668404919, 38.932564966842676],
     {
       hintContent: "Кафе",
     },
@@ -249,17 +250,22 @@ ymaps.ready(function () {
       iconContentLayout: MyIconContentLayout,
     }
   );
+  if (document.documentElement.clientWidth < 768) {
+    myMap.setCenter([44.99156, 38.931422]);
+  }
 
-  myMap.geoObjects.add(geo);
-  myMap.geoObjects.add(bankWhite);
-  myMap.geoObjects.add(bank);
-  myMap.geoObjects.add(ambulance);
-  myMap.geoObjects.add(ambulanceWhite);
-  myMap.geoObjects.add(mall);
-  myMap.geoObjects.add(mallWhite);
-  myMap.geoObjects.add(swimmingPool);
-  myMap.geoObjects.add(gas);
-  myMap.geoObjects.add(child);
-  myMap.geoObjects.add(cafe);
-
+  myMap.geoObjects
+    .add(geo)
+    .add(bankWhite)
+    .add(bank)
+    .add(ambulance)
+    .add(ambulanceWhite)
+    .add(mall)
+    .add(mallWhite)
+    .add(swimmingPool)
+    .add(gas)
+    .add(child)
+    .add(cafe);
+  myMap.behaviors.disable("scrollZoom");
+  myMap.behaviors.disable("drag");
 });

@@ -4,11 +4,16 @@
 
 .page {
   max-width: 1440px;
+  height: 811px;
   position: relative;
   background-image: url(../image/main__background.jpg);
   background-repeat: no-repeat;
   background-size: contain;
+  background-position: center;
   margin: 0 auto;
+
+
+
 }
 
 @media screen and (max-width: 1335px) {
@@ -179,8 +184,7 @@
   position: relative;
   padding: 0 0 72px 0;
   overflow: hidden;
-
-
+  width: 100%
 }
 
 @media screen and (max-width: 768px) {
@@ -193,7 +197,8 @@
 
 .main__nav {
   gap: 35px;
-  border: 1px solid rgba(49, 190, 244, 1);
+  border-top: 1px solid rgba(49, 190, 244, 1);
+  border-bottom: 1px solid rgba(49, 190, 244, 1);
   width: 100%;
   justify-content: center;
   align-items: center;
@@ -677,10 +682,11 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: relative;
 }
 
 .infrastructure__header {
-  margin: 0;
+  margin: 0 0 60px 0;
   color: #212D55;
   font-family: "Gilroy", sans-serif;
   font-size: 45px;
@@ -688,6 +694,20 @@
   font-weight: 700;
   line-height: 70px;
   /* 155.556% */
+}
+
+@media screen and (max-width: 636px) {
+  .infrastructure__header {
+    color: #212D55;
+    text-align: center;
+    font-family: "Gilroy";
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    width: 224px;
+    height: 65px;
+  }
 }
 
 .map {
@@ -1194,6 +1214,23 @@
 
 }
 
+.form::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(51, 51, 51, 0.9) url(../img/load.gif) center / 50px no-repeat;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.form._sending::after {
+  opacity: 1;
+  visibility: visible;
+}
+
 @media screen and (max-width: 900px) {
   .form {
     display: flex;
@@ -1217,7 +1254,9 @@
 .form__input:focus {
   outline: 0;
 }
-
+.form__input._error {
+  box-shadow: 0 0 15px red;
+}
 .input-box {
   width: 279px;
   height: 101px;
@@ -1321,10 +1360,77 @@
 .map {
   width: 100%;
   height: 663px;
+  position: relative;
 }
 
-.map__icon {
+.map__icon {}
+
+.map__cards {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  position: absolute;
+  top: 47px;
+  right: 17%;
+  z-index: 4;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+@media screen and (max-width: 1000px) {
+  .map__cards {
+    right: 10%;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .map__cards {
+    display: none;
+  }
+}
+
+
+.map__cards li {
+  width: 319px;
+  height: 102px;
+  border-radius: 10px;
+  background: #F9FCFD;
+  box-shadow: 0px 5px 15px 0px rgba(33, 45, 85, 0.20);
   position: relative;
+}
+
+.map__card-background {
+  background-image: url(../image/maps\ cards.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 5px;
+  left: 0;
+}
+
+.map__card-background svg {
+  display: block;
+  top: 10px;
+  left: 20px;
+  position: absolute;
+
+}
+
+.map__card__text {
+  color: #212D55;
+  font-family: "Gilroy";
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  position: absolute;
+  top: 33px;
+  left: 100px;
+  margin: 0;
 }
 
 .map__icon_ative {}
